@@ -8,7 +8,7 @@ Bundle* getBundleFromInput(Bundle* bundles[], int length){
         cout<<i<<": "<<bundles[i-1]->getBundleName()<<endl;
     int input;
     cin>>input;
-    input--;
+    input=(input-1)%length;//Safe indexing to avoid error out of bounds
     Bundle* required;
     for(int i= 0;i<length;i++){
         if(i==input)
