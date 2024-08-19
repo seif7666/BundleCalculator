@@ -13,5 +13,6 @@ class Customer{
         Customer(std::string customerName);
         void createOperation(double price);
         std::string getName();
+        std::string getStats();
 };
 #endif

@@ -15,5 +15,7 @@ void Customer::createOperation(double price){
     cout<<"Result of operation is "<<result <<endl;
 }
 
-string Customer::getName(){return this->getName();}
-
+string Customer::getName(){return name;}
+string Customer::getStats(){
+    return name+"\t"+to_string(numberOfOperations);
+}
