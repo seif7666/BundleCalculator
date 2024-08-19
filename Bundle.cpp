@@ -3,8 +3,11 @@
 double Bundle::compute(double price){
     return price;
 }
+std::string Bundle::getBundleName(){
+    return this->bundleName;
+}
 std::string BundleDecorator::getBundleName(){
-    return this->getBundleName()+"__"+this->bundle->getBundleName();
+    return Bundle::getBundleName()+"__"+this->bundle->getBundleName();
 }
 double PercentageBundleDecorator::compute(double price){
     double totalPrice= this->bundle->compute(price);
