@@ -1,4 +1,5 @@
 #include "Customer.hpp"
+#include "BundleFactory.hpp"
 using namespace std;
 
 Customer::Customer(std::string name){
@@ -9,8 +10,9 @@ Customer::Customer(std::string name){
 
 void Customer::createOperation(double price){
     this->numberOfOperations++;
-    //TODO
+    this->subscribedBundle= BundleFactory::getBundle(numberOfOperations,this->subscribedBundle);
     double result= this->subscribedBundle->compute(price);
+    cout<<"Result of operation is "<<result <<endl;
 }
 
 string Customer::getName(){return this->getName();}

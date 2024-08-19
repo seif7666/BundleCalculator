@@ -3,7 +3,6 @@
 #include <iostream>
 #include "Bundle.hpp"
 
-#define NUM_OPERATION_FOR_FIRST_BUNDLE 3
 class Customer{
     private:
         std::string name;
