@@ -25,14 +25,14 @@ class BundleDecorator: public Bundle{
 };
 class PercentageBundleDecorator: public BundleDecorator{
     public:
-        PercentageBundleDecorator(Bundle* bundle):BundleDecorator(bundle,"15% Bundle"){}
-        PercentageBundleDecorator():BundleDecorator("15% Bundle"){}
+        PercentageBundleDecorator(Bundle* bundle):BundleDecorator(bundle,"[15% Bundle]"){}
+        PercentageBundleDecorator():BundleDecorator("[15% Bundle]"){}
         double compute(double price);
 };
 class SubtractionBundleDecorator: public BundleDecorator{
     public:
-        SubtractionBundleDecorator(Bundle* bundle):BundleDecorator(bundle,"-100 Bundle"){}
-        SubtractionBundleDecorator():BundleDecorator("-100 Bundle"){}
+        SubtractionBundleDecorator(Bundle* bundle):BundleDecorator(bundle,"[-100 Bundle]"){}
+        SubtractionBundleDecorator():BundleDecorator("[-100 Bundle]"){}
         double compute(double price);
 };
 #endif
