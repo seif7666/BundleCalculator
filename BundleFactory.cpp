@@ -26,9 +26,9 @@ Bundle* BundleFactory::getBundle(int numberOfOperations, Bundle* currentBundle){
         delete currentBundle;
         return new SubtractionBundleDecorator();
     }
-    if(numberOfOperations>=NUM_OPERATION_FOR_SECOND_STAGE){
+    if(numberOfOperations>=NUM_OPERATION_FOR_SECOND_STAGE && numberOfOperations<STAGE_THREE){
         delete currentBundle;
-        cout<<"You have now reached "<<numberOfOperations<<" operations you can either pick on of these bundles!";
+        cout<<"You have now reached "<<numberOfOperations<<" operations you can either pick on of these bundles!\n";
         Bundle* bundles[]= {new PercentageBundleDecorator(),new SubtractionBundleDecorator()};
         return getBundleFromInput(bundles,2);
     }

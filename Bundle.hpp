@@ -8,6 +8,7 @@ class Bundle{
             this->bundleName= name;
         }
     public:
+        virtual ~Bundle(){}
         Bundle():Bundle("Plain"){ }
         virtual double compute(double price);
         virtual std::string getBundleName();
@@ -20,6 +21,9 @@ class BundleDecorator: public Bundle{
             this->bundle= bundle;
         }
         BundleDecorator(std::string name): BundleDecorator(new Bundle(), name){}
+        ~BundleDecorator(){
+            delete bundle;
+        }
         virtual double compute(double price)=0;
         std::string getBundleName();
 };
