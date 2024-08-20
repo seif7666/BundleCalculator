@@ -1,6 +1,7 @@
 #include "Customer.hpp"
 #include <unordered_map>
 #include <vector>
+#include "logger.hpp"
 using namespace std;
 
 class Main{
@@ -36,6 +37,10 @@ class Main{
 
 int main(){
     Main main;
+    Logger* logger= Logger::getLogger();
+    logger->info("Hello World!");
+
+    /*
     while(true){
         cout<<"1: Create Customer\n2: Create Operation"<<endl;
         int input;
@@ -52,7 +57,7 @@ int main(){
             cin>>price;
             main.createOperation(main.customers[main.printCustomers()],price);
         }
-    }
+    }*/
     
     return 0;
 }
