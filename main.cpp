@@ -10,18 +10,22 @@ class Main{
     public:
         unordered_map<string,Customer*> customers;
         void addNewCustomer(Customer* cust){
-            cout<<cust->getName()<<endl;
+            Logger::getLogger()->debug("Entered method addNewCustomer");
             if(customers.find(cust->getName())==customers.end()){
                 customers[cust->getName()]= cust;
                 customerNames.push_back(cust->getName());
+                Logger::getLogger()->info("Customer "+cust->getName()+" added to map!");
             }
             else{
                 cout<<"Customer already exists!"<<endl;
                 delete cust;
             }
+            Logger::getLogger()->debug("Exiting Method addNewCustomer");
         }
         void createOperation(Customer* customer, double price){
+            Logger::getLogger()->debug("Entering Method createOperation with customer "+ customer->getName()+" and price = "+to_string(price));
             customer->createOperation(price);
+            Logger::getLogger()->debug("Exiting Method createOperation");
         }
 
         string printCustomers(){
@@ -40,7 +44,7 @@ int main(){
     Logger* logger= Logger::getLogger();
     logger->info("Hello World!");
 
-    /*
+    
     while(true){
         cout<<"1: Create Customer\n2: Create Operation"<<endl;
         int input;
@@ -57,7 +61,7 @@ int main(){
             cin>>price;
             main.createOperation(main.customers[main.printCustomers()],price);
         }
-    }*/
+    }
     
     return 0;
 }

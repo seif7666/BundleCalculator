@@ -40,13 +40,13 @@ void Logger::prepareLog(string log){
     this->writeToFile(completeLog);
 }
 void Logger::info(string data){
-    this->prepareLog("[INFO]:["+data+"]");
+    this->prepareLog("[INFO]: ["+data+"]");
 }
 void Logger::warn(std::string data){
-    this->prepareLog("[WARN]:["+data+"]");
+    this->prepareLog("[WARN]: ["+data+"]");
 }
 void Logger::debug(std::string data){
-    this->prepareLog("[DEBUG]:\t["+data+"]");
+    this->prepareLog("[DEBUG]: ["+data+"]");
 }
 Logger* Logger::getLogger(){
     if(singletonInstance== NULL)
